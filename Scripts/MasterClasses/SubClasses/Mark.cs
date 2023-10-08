@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public abstract class Mark : Djur
@@ -21,10 +22,15 @@ public abstract class Mark : Djur
     }
     public int GetHealth()
     {
-        return Health;
+        return this.Health;
     }
     public int GetSpeed()
     {
-        return Speed;
+        return this.Speed;
     }
+    public int GetLegs()
+    {
+        return this.AmountOfLegs;
+    }
+
 }

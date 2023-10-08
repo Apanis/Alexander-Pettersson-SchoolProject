@@ -26,4 +26,5 @@ public abstract class Vatten : Djur
         return Speed;
     }
 
+
 }
