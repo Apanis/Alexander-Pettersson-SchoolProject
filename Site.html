@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyFirstWebsite</title>
+</head>
+<header class="tabs">
+    <button onclick="showTab('Home')">Home</button>
+    <button onclick="showTab('Assignment')">Assignment</button>
+    <button onclick="showTab('Credentials')">Credentials</button>
+    
+</header>
+
+
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .tabs {
+            overflow: hidden;
+            border:2px solid black;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f2f2f2;
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+    
+</head>
+<body>
+
+
+
+<div id="Home" class="tabcontent">
+    <h1>My first website</h1>
+    <!img src="images/Jensen.png" alt="The Jensen Logo">
+    
+</div>
+
+<div id="Assignment" class="tabcontent">
+    <h3>This website is made for a school project</h3>
+    <p>I made this website for a school project to prove that I can create a simple website. This project was a chance for me to show my coding skills in a practical way.
+
+        The main goal was to create a website from scratch. This website is my way of showing that I understand HTML and CSS, which is important for making websites.
+        
+        The tabs you see on the website are there to make it easy for people to use. Even though the website looks simple, making it work well was a bit tricky. I had to solve problems to make sure everything runs smoothly.
+        
+        This project means more to me than just finishing a school task. It shows that I enjoy coding and making things on the web. As technology keeps growing, knowing how to create websites is becoming more important. This project is a first step for me to become good at making websites.
+        
+        By sharing this website, I hope to not only do well in my project but also encourage others to explore coding and see how cool it can be in the digital world.
+        
+    </p>
+</div>
+
+<div id="Credentials" class="tabcontent">
+    <h3>Credentials of this website:</h3>
+    <p>This website is made by the Jensen Student Alexander Pettersson.</p>
+</div>
+
+
+<script>
+    showTab("Home");
+    function showTab(tabName) {
+        var i, tabcontent;
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        document.getElementById(tabName).style.display = "block";
+    }
+</script>
+
+<footer class="footer">
+    
+    <p>&copy; 2023 MyFirstWebsite</p>
+    
+</footer>
+</body>
+</html>
