@@ -1,93 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>MyFirstWebsite</title>
-</head>
-<header class="tabs">
-    <button onclick="showTab('Home')">Home</button>
-    <button onclick="showTab('Assignment')">Assignment</button>
-    <button onclick="showTab('Credentials')">Credentials</button>
-    
-</header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alexanders hemsida</title>
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-<body>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .tabs {
-            overflow: hidden;
-            border:2px solid black;
-        }
-
-        .tabcontent {
-            display: none;
-            padding: 20px;
-        }
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #f2f2f2;
-            padding: 10px;
-            text-align: left;
-        }
-    </style>
-    
-</head>
-<body>
-
-
-
-<div id="Home" class="tabcontent">
-    <h1>My first website</h1>
-    <!img src="images/Jensen.png" alt="The Jensen Logo">
-    
-</div>
-
-<div id="Assignment" class="tabcontent">
-    <h3>This website is made for a school project</h3>
-    <p>I made this website for a school project to prove that I can create a simple website. This project was a chance for me to show my coding skills in a practical way.
-
-        The main goal was to create a website from scratch. This website is my way of showing that I understand HTML and CSS, which is important for making websites.
-        
-        The tabs you see on the website are there to make it easy for people to use. Even though the website looks simple, making it work well was a bit tricky. I had to solve problems to make sure everything runs smoothly.
-        
-        This project means more to me than just finishing a school task. It shows that I enjoy coding and making things on the web. As technology keeps growing, knowing how to create websites is becoming more important. This project is a first step for me to become good at making websites.
-        
-        By sharing this website, I hope to not only do well in my project but also encourage others to explore coding and see how cool it can be in the digital world.
-        
-    </p>
-</div>
-
-<div id="Credentials" class="tabcontent">
-    <h3>Credentials of this website:</h3>
-    <p>This website is made by the Jensen Student Alexander Pettersson.</p>
-</div>
-
-
-<script>
-    showTab("Home");
-    function showTab(tabName) {
-        var i, tabcontent;
-
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-
-        document.getElementById(tabName).style.display = "block";
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      transition: background-color 0.5s, filter 0.5s;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
     }
-</script>
 
-<footer class="footer">
-    
-    <p>&copy; 2023 MyFirstWebsite</p>
-    
-</footer>
+    body.inverted {
+      background-color: #000000; /* Inverterad bakgrund */
+      filter: invert(1);
+    }
+
+    /* Justering av små skärmar */
+    @media (max-width: 780px) {
+      body {
+        padding-top: 3.5rem; /* Justering av toppen för små skärmar */
+      }
+
+      .img-container img {
+        max-width: 40%;
+        height: auto;
+        display: block;
+        margin: 0 auto; /* centrera bilden */
+      }
+    }
+    /* Justering av större skärmar */
+    @media (min-width: 781px) {
+      body {
+        padding-top: 2.5rem; /* Justering av toppen för större skärmar */
+      }
+
+      .img-container img {
+        max-width: 40%;
+        height: auto;
+        display: block;
+        margin: 0 auto; /* centrera bilden */
+      }
+    }
+
+    /* Justering av ännu större skärmar */
+    @media (min-width: 920px) {
+      body {
+        padding-top: 2.5rem; /* Justering av toppen för ännu större skärmar */
+    }
+
+    .img-container img {
+      max-width: 40%;
+      height: auto;
+      display: block;
+      margin: 0 auto; /* centrera bilden */
+    }
+    }
+    .container {
+      flex: 1;
+    }
+    /* Justering av ännu ännu större skärmar */
+    @media (min-width: 1200px) {
+      body {
+        padding-top: 2.5rem; /* Justering av toppen för ännu ännu större skärmar */
+    }
+
+    .img-container img {
+      max-width: 30%;
+      height: auto;
+      display: block;
+      margin: 0 auto; /* centrera bilden */
+    }
+    }
+    .container {
+      flex: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Content för topmenyn -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Bla Bla Bla</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <button class="btn btn-light" id="toggleColors">Switcha färger</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content för innehåll -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col">
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="home">
+            <h1>Välkommen till min hemsida!</h1>
+            <p>Den här hemsidan är skapad med användning av Bootstrap CSS och Javascript.</p>
+            <div class="img-container">
+              <img src="images/happy.jpg" alt="En glad man" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content för footer -->
+  <footer class="bg-dark text-light text-center py-3">
+    <p>&copy; 2023 Alexanders projekt</p>
+  </footer>
+
+  <!-- Bootstrap JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <!-- Invertering av färger-->
+  <script>
+    document.getElementById('toggleColors').addEventListener('click', function() {
+      document.body.classList.toggle('inverted');
+    });
+  </script>
 </body>
 </html>
